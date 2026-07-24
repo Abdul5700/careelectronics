@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@keyframes drift1{0%,100%{transform:translate(0,0) rotate(0deg)}50%{transform:translate(30px,-40px) rotate(8deg)}}
+@keyframes drift2{0%,100%{transform:translate(0,0) rotate(0deg)}50%{transform:translate(-40px,30px) rotate(-6deg)}}
+@keyframes drift3{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(20px,50px) scale(1.05)}}
+.drift-a{animation:drift1 14s ease-in-out infinite}.drift-b{animation:drift2 19s ease-in-out infinite}.drift-c{animation:drift3 24s ease-in-out infinite}.word-reveal{display:inline-block}
+.brand-ticker{overflow:hidden;mask-image:linear-gradient(to right,transparent,black 8%,black 92%,transparent);-webkit-mask-image:linear-gradient(to right,transparent,black 8%,black 92%,transparent)}.brand-ticker-track{display:flex;align-items:center;width:max-content;animation:brandTicker 38s linear infinite}.brand-ticker:hover .brand-ticker-track{animation-play-state:paused}.brand-ticker-separator{box-shadow:0 0 14px rgba(66,168,93,.8)}@keyframes brandTicker{to{transform:translateX(-50%)}}
+[class*="Space_Grotesk"]{font-family:'Geist','Inter',sans-serif!important}[class*="Instrument_Serif"]{font-family:'Instrument Serif',serif!important}
+html{background:#FBFAF7}body{margin:0;background:#FBFAF7;color:#12281A;-webkit-font-smoothing:antialiased;font-family:'Inter',sans-serif}::selection{background:#42A85D;color:#000}
+@media(prefers-reduced-motion:reduce){.drift-a,.drift-b,.drift-c,.brand-ticker-track{animation:none!important}html{scroll-behavior:auto}}
+@media(max-width:767px){.drift-a,.drift-b,.drift-c,.brand-ticker-track,.word-reveal{will-change:transform}.brand-ticker-track{animation-duration:44s}}

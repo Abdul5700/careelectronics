@@ -1,0 +1,10 @@
+import { Navbar } from './components/Navbar'
+import { Hero } from './components/Hero'
+import { BrandTicker } from './components/BrandTicker'
+import { Projects } from './components/Projects'
+import { Studio } from './components/Studio'
+import { Capabilities } from './components/Capabilities'
+import { Testimonial } from './components/Testimonial'
+import { Contact } from './components/Contact'
+import { LanguageGate } from './components/LanguageGate'
+export default function App(){return <><LanguageGate/><Navbar/><main><Hero/><BrandTicker/><Projects/><Studio/><Capabilities/><Testimonial/><Contact/></main></>}
