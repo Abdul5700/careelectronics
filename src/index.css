@@ -10,4 +10,82 @@
 [class*="Space_Grotesk"]{font-family:'Geist','Inter',sans-serif!important}[class*="Instrument_Serif"]{font-family:'Instrument Serif',serif!important}
 html{background:#FBFAF7}body{margin:0;background:#FBFAF7;color:#12281A;-webkit-font-smoothing:antialiased;font-family:'Inter',sans-serif}::selection{background:#42A85D;color:#000}
 @media(prefers-reduced-motion:reduce){.drift-a,.drift-b,.drift-c,.brand-ticker-track{animation:none!important}html{scroll-behavior:auto}}
-@media(max-width:767px){.drift-a,.drift-b,.drift-c,.brand-ticker-track,.word-reveal{will-change:transform}.brand-ticker-track{animation-duration:44s}}
+@media(max-width:767px){
+  .drift-a,.drift-b,.drift-c,.brand-ticker-track,.word-reveal{will-change:transform}
+  .brand-ticker-track{animation-duration:44s}
+
+  /* ── Navbar safe spacing ── */
+  main{padding-top:72px}
+
+  /* ── Projects section: tighter top padding on mobile ── */
+  #projects{padding-top:0!important}
+
+  /* ── Service cards: remove fixed aspect ratios, allow auto height ── */
+  #projects > div > div[class*="aspect-"],
+  #projects > div[class*="aspect-"]{
+    aspect-ratio:unset!important;
+    height:auto!important;
+    min-height:unset!important;
+  }
+
+  /* ── Make card inner containers flow normally instead of absolute positioning ── */
+  #projects > div > div[class*="aspect-"] > div,
+  #projects > div[class*="aspect-"] > div{
+    position:relative!important;
+    inset:unset!important;
+  }
+
+  /* ── Ensure card wrappers don't clip content ── */
+  #projects > div > div[class*="rounded-2xl"],
+  #projects > div[class*="overflow-hidden"]{
+    overflow:visible!important;
+  }
+
+  /* ── Card wrapper inner overflow visible ── */
+  #projects .rounded-\[1\.25rem\]{
+    overflow:visible!important;
+    height:auto!important;
+  }
+
+  /* ── 32px spacing between all card containers ── */
+  #projects > div > div.grid{gap:32px!important}
+  #projects > div + div{margin-top:32px}
+
+  /* ── Service chips: 2-column grid, 38px height, 13px font, 10px gap ── */
+  #projects .flex.flex-wrap.gap-2\.5{
+    display:grid!important;
+    grid-template-columns:1fr 1fr!important;
+    gap:10px!important;
+    flex-wrap:unset!important;
+  }
+
+  #projects .flex.flex-wrap.gap-2\.5 > span{
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    height:38px!important;
+    font-size:13px!important;
+    padding:0 12px!important;
+    text-align:center!important;
+    white-space:nowrap!important;
+    overflow:hidden!important;
+    text-overflow:ellipsis!important;
+  }
+
+  /* ── Full-width cards with proper side margins ── */
+  #projects > div{
+    padding-left:16px!important;
+    padding-right:16px!important;
+  }
+
+  /* ── Remove negative margins and offsets on mobile ── */
+  #projects .lg\:-mt-4{margin-top:0!important}
+  #projects .lg\:mt-24{margin-top:0!important}
+
+  /* ── Ensure grid stacks to single column on mobile ── */
+  #projects .grid.grid-cols-1.lg\:grid-cols-12{
+    display:flex!important;
+    flex-direction:column!important;
+    gap:32px!important;
+  }
+}
